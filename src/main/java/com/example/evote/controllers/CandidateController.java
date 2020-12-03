@@ -17,7 +17,7 @@ public class CandidateController {
 
     @Autowired
     CandidateRepository candidateRepository;
-
+//Linked to Req.5 (Updating Candidate)
     @RequestMapping(value = "/updateCandidate", method = RequestMethod.POST, produces = "text/plain")
     public @ResponseBody
     ResponseEntity<String> UpdateCandidate(@RequestBody UpdateCandidateRequest request) {

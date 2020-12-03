@@ -32,7 +32,7 @@ public class VoteController {
 
     @Autowired
     VoterRepository voterRepository;
-
+//Section Linked to Req. 2
     @RequestMapping(value = "/{sessionId}/vote", method = RequestMethod.GET)
     public String CastVote(@PathVariable(name = "sessionId") String sessionId, ModelMap model) {
         try {
@@ -56,7 +56,7 @@ public class VoteController {
         }
         return "error";
     }
-
+// Section Linked to Req. 3
     @RequestMapping(value = "/vote", method = RequestMethod.POST, produces = "text/plain")
     public @ResponseBody
     ResponseEntity<String> SubmitVote(@RequestBody CastVoteRequest request) {

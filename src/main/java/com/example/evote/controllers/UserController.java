@@ -42,7 +42,7 @@ public class UserController {
         }
         return "error";
     }
-
+// Section linked to Req. 1 
     @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "text/plain")
     public @ResponseBody
     ResponseEntity<String> Login(@RequestBody Login request) {
@@ -86,7 +86,7 @@ public class UserController {
         }
         return "error";
     }
-
+//Linked to (Req.6 Check Log - Who voted)
     @RequestMapping(value = "/dashboard", method = RequestMethod.GET)
     public String AdminDashboard(ModelMap model) {
         try {
@@ -103,7 +103,7 @@ public class UserController {
         }
         return "error";
     }
-
+//Linked to Req 4. //Candidate Votes (Check Records)
     @RequestMapping(value = "/candidatelist", method = RequestMethod.GET)
     public String CandidateList(ModelMap model) {
         try {
