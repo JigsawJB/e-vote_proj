@@ -76,7 +76,7 @@ public class UserController {
         }
         return new ResponseEntity<String>("Login failed.", HttpStatus.BAD_REQUEST);
     }
-
+//Admin Login
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String AdminLogin() {
         try {
