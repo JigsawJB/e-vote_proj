@@ -51,7 +51,7 @@
                 url: "/getCandidates/" + $("#election").val(),
                 method: 'GET',
                 success: (response) => {
-                    $("#candidate").empty().append(new Option("Select a category", "0", true, true));
+                    $("#candidate").empty().append(new Option("Select a candidate", "0", true, true));
                     response.forEach(candidate => {
                         $("#candidate").append(new Option(candidate.firstName + " " + candidate.lastName, candidate.id, false, false));
                     });

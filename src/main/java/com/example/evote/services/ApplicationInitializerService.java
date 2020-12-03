@@ -74,6 +74,9 @@ public class ApplicationInitializerService implements ApplicationListener<Applic
         elections.add(new Election("UWI Guild Presidency", "The election to determine the UWI guild president."));
         elections.add(new Election("UWI Guild Vice Presidency (VPSSP)", "The election to determine the UWI guild vice president."));
         elections.add(new Election("Secretary", "The election to determine the UWI guild secretary."));
+        elections.add(new Election("FST Representative", "The election to determine the FST representative"));
+        elections.add(new Election("Hall Chairperson- Chancellor Hall", "The election to determine Hall chair CH"));
+        elections.add(new Election("Commuters Rep", "The election to determine the Commuting Students Representative"));
         elections.removeIf(election -> electionRepository.findByName(election.getName()) != null);
         if (elections.isEmpty()) {
             return;
@@ -102,7 +105,26 @@ public class ApplicationInitializerService implements ApplicationListener<Applic
         Election presidency = electionRepository.findByName("UWI Guild Presidency");
         Election vicePresidency = electionRepository.findByName("UWI Guild Vice Presidency (VPSSP)");
         Election secretary = electionRepository.findByName("Secretary");
+        Election fst_rep = electionRepository.findByName("FST Representative");
+        Election hall_rep = electionRepository.findByName("Hall Chairperson- Chancellor Hall");
+        Election commuter_rep = electionRepository.findByName("Commuters Rep");
+        
         ArrayList<Candidate> candidates = new ArrayList<>();
+        
+        Candidate sujae = new Candidate("Sujae", "Boswell");
+        candidates.add(sujae);
+        Candidate gabriella = new Candidate("Gabriella", "Morris");
+        candidates.add(gabriella);
+        Candidate danielle = new Candidate("Danielle" , "Mullings");
+        candidates.add(danielle);
+        Candidate william = new Candidate("William", "Gordon");
+        candidates.add(william);
+        Candidate jerimiah = new Candidate("Jerimiah" , "Ford");
+        candidates.add(jerimiah);
+        Candidate bodar = new Candidate("Bodar", "McGregor");
+        candidates.add(bodar);
+        Candidate simpson = new Candidate("Simpson" , "Clarke");
+        candidates.add(simpson);
         Candidate bruce = new Candidate("Bruce", "Wayne");
         candidates.add(bruce);
         Candidate kent = new Candidate("Clark", "Kent");
@@ -111,6 +133,14 @@ public class ApplicationInitializerService implements ApplicationListener<Applic
         candidates.add(tony);
         Candidate peter = new Candidate("Peter", "Parker");
         candidates.add(peter);
+
+        sujae.setElection(presidency);
+        gabriella.setElection(presidency);
+        danielle.setElection(fst_rep);
+        william.setElection(fst_rep);
+        jerimiah.setElection(hall_rep);
+        bodar.setElection(hall_rep);
+        simpson.setElection(commuter_rep);
         bruce.setElection(presidency);
         kent.setElection(presidency);
         tony.setElection(secretary);
